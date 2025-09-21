@@ -4,7 +4,7 @@
 :root {
   --primary-color: #3d3d3d;
   --accent-color: #000000;
-  --accent-hover: #555555; /* warna hover lebih soft */
+  --accent-hover: #555555;
   --light-gray: #f9f9f9;
   --white: #ffffff;
   --max-width: 1200px;
@@ -89,16 +89,17 @@ body {
 .hero-content {
   position: relative;
   z-index: 1;
+  padding: 0 15px;
 }
 
 .hero-content h1 {
-  font-size: 7rem;
+  font-size: 3rem;
   margin-bottom: 10px;
   text-shadow: 0 2px 6px rgba(0,0,0,0.7);
 }
 
 .hero-content p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-bottom: 20px;
   text-shadow: 0 2px 6px rgba(0,0,0,0.7);
 }
@@ -127,7 +128,6 @@ body {
   text-align: center;
 }
 
-.content-section h1,
 .content-section h2 {
   margin-bottom: 20px;
   color: var(--accent-color);
@@ -137,26 +137,10 @@ body {
   margin-bottom: 15px;
 }
 
-/* List Tujuan */
-.list-tujuan {
-  text-align: left;
-  max-width: 800px;
-  margin: 20px auto;
-  padding-left: 20px;
-}
-
-.list-tujuan li {
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
-
-/* ==========================
-   Card Container
-========================== */
 .card-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 kolom di desktop */
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
   margin-top: 30px;
 }
 
@@ -177,7 +161,6 @@ body {
   box-shadow: 0 8px 16px rgba(0,0,0,0.15);
 }
 
-/* Video Wrapper (Google Drive iframe) */
 .video-wrapper {
   position: relative;
   width: 100%;
@@ -202,21 +185,6 @@ body {
   color: var(--primary-color);
 }
 
-.btn-card {
-  display: inline-block;
-  margin-top: 10px;
-  background: var(--accent-color);
-  color: var(--white);
-  padding: 8px 15px;
-  border-radius: 20px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.btn-card:hover {
-  background-color: var(--accent-hover);
-}
-
 /* ==========================
    About Section
 ========================== */
@@ -239,6 +207,7 @@ body {
   max-width: 400px;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 100%;
 }
 
 .text-content {
@@ -277,14 +246,14 @@ body {
 }
 
 .main-footer .social-links a {
-  color: var(--accent-color);
+  color: var(--white);
   text-decoration: none;
   margin: 0 5px;
   transition: color 0.3s ease;
 }
 
 .main-footer .social-links a:hover {
-  color: var(--white);
+  color: var(--accent-hover);
 }
 
 /* ==========================
@@ -304,18 +273,13 @@ body {
     width: 100%;
   }
 
-  .main-nav li {
-    width: 100%;
-  }
-
   .main-nav a {
     display: block;
     padding: 8px 12px;
     width: 100%;
   }
 
-  /* Card jadi 1 kolom di HP */
-  .card-container {
-    grid-template-columns: 1fr;
+  .hero-content h1 {
+    font-size: 2rem;
   }
 }
